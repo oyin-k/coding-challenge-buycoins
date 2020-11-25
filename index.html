@@ -3,9 +3,348 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Your Repositories</title>
+
+    <link rel="shortcut icon" type="image/png" href="”favicon.png”" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+
+  <body>
+    <header>
+      <nav class="nav">
+        <div class="nav--siteNav">
+          <div class="nav--logo">
+            <img src="./github-main-logo.svg" alt="logo" />
+          </div>
+          <label class="nav--search-Label">
+            <input
+              class="nav--search-Label-Input"
+              type="text"
+              placeholder="Search or jump to..."
+            />
+            <img
+              class="nav--search-Label-Icon"
+              src="./search-key-slash.svg"
+              alt=""
+            />
+          </label>
+
+          <ul class="nav-links">
+            <li class="nav-link">Pull requests</li>
+            <li class="nav-link">Issues</li>
+            <li class="nav-link">Marketplace</li>
+            <li class="nav-link">Explore</li>
+          </ul>
+        </div>
+
+        <div class="nav--actions">
+          <div class="nav--actions-notifications">
+            <i class="material-icons">notifications</i>
+          </div>
+          <div class="nav--actions-new-dropdown">
+            <i class="material-icons">add</i>
+            <i class="material-icons">arrow_drop_down</i>
+          </div>
+          <div class="nav--actions-profile-dropdown">
+            <img src="./profile.jpeg" alt="profile-picture" />
+            <i class="material-icons">arrow_drop_down</i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- <div style="margin-top: 24px"> -->
+      <nav class="pageNav">
+        <ul class="pageNav--links">
+          <li class="pageNav--link">Overview</li>
+          <li class="pageNav--link active">
+            Repositories <span class="pageNav--counter">60</span>
+          </li>
+          <li class="pageNav--link">Projects</li>
+          <li class="pageNav--link">Packages</li>
+        </ul>
+      </nav>
+      <!-- </div> -->
+
+      <div class="main-content">
+        <aside class="profile">
+          <div class="profile--image">
+            <img src="./profile.jpeg" alt="profile image" />
+            <div class="emoji">💭</div>
+          </div>
+          <div class="profile--info">
+            <h1 class="profile--info-Name">Oyinkan Oyetunmibi</h1>
+            <h4 class="profile--info-Username">oyin-k</h4>
+            <p class="profile--info-Description">love cooking on computers.</p>
+          </div>
+        </aside>
+
+        <section class="feed">
+          <div class="feed--filter">
+            <input type="text" placeholder="Find a repository..." />
+          </div>
+          <div class="feed--info">
+            <p>
+              <strong>124</strong> repositories for
+              <strong>public</strong> repositories
+            </p>
+          </div>
+          <div class="feed--list">
+            <div class="feed--item">
+              <div class="feed--item-Info">
+                <h2 class="feed--item-Info-Name">
+                  <a href="#">netflix-clone</a>
+                </h2>
+
+                <div class="added-info">
+                  <div class="language">
+                    <div class="language--color-Code"></div>
+                    <span class="language--name">Javascript</span>
+                  </div>
+                  <div class="stars">2</div>
+                  <div class="date">Updated on 2 Oct</div>
+                </div>
+              </div>
+              <div class="feed--item-Action">
+                <button>
+                  <i class="material-icons">star</i>
+                  Star
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="feed--list">
+            <div class="feed--item">
+              <div class="feed--item-Info">
+                <h2 class="feed--item-Info-Name">
+                  <a href="#">netflix-clone</a>
+                </h2>
+
+                <div class="added-info">
+                  <div class="language">
+                    <div class="language--color-Code"></div>
+                    <span class="language--name">Javascript</span>
+                  </div>
+                  <div class="stars">2</div>
+                  <div class="date">Updated on 2 Oct</div>
+                </div>
+              </div>
+              <div class="feed--item-Action">
+                <button>
+                  <i class="material-icons">star</i>
+                  Star
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="feed--list">
+            <div class="feed--item">
+              <div class="feed--item-Info">
+                <h2 class="feed--item-Info-Name">
+                  <a href="#">netflix-clone</a>
+                </h2>
+
+                <div class="added-info">
+                  <div class="language">
+                    <div class="language--color-Code"></div>
+                    <span class="language--name">Javascript</span>
+                  </div>
+                  <div class="stars">2</div>
+                  <div class="date">Updated on 2 Oct</div>
+                </div>
+              </div>
+              <div class="feed--item-Action">
+                <button>
+                  <i class="material-icons">star</i>
+                  Star
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="feed--list">
+            <div class="feed--item">
+              <div class="feed--item-Info">
+                <h2 class="feed--item-Info-Name">
+                  <a href="#">netflix-clone</a>
+                </h2>
+
+                <div class="added-info">
+                  <div class="language">
+                    <div class="language--color-Code"></div>
+                    <span class="language--name">Javascript</span>
+                  </div>
+                  <div class="stars">2</div>
+                  <div class="date">Updated on 2 Oct</div>
+                </div>
+              </div>
+              <div class="feed--item-Action">
+                <button>
+                  <i class="material-icons">star</i>
+                  Star
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="feed--list">
+            <div class="feed--item">
+              <div class="feed--item-Info">
+                <h2 class="feed--item-Info-Name">
+                  <a href="#">netflix-clone</a>
+                </h2>
+
+                <div class="added-info">
+                  <div class="language">
+                    <div class="language--color-Code"></div>
+                    <span class="language--name">Javascript</span>
+                  </div>
+                  <div class="stars">2</div>
+                  <div class="date">Updated on 2 Oct</div>
+                </div>
+              </div>
+              <div class="feed--item-Action">
+                <button>
+                  <i class="material-icons">star</i>
+                  Star
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="feed--list">
+            <div class="feed--item">
+              <div class="feed--item-Info">
+                <h2 class="feed--item-Info-Name">
+                  <a href="#">netflix-clone</a>
+                </h2>
+
+                <div class="added-info">
+                  <div class="language">
+                    <div class="language--color-Code"></div>
+                    <span class="language--name">Javascript</span>
+                  </div>
+                  <div class="stars">2</div>
+                  <div class="date">Updated on 2 Oct</div>
+                </div>
+              </div>
+              <div class="feed--item-Action">
+                <button>
+                  <i class="material-icons">star</i>
+                  Star
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="feed--list">
+            <div class="feed--item">
+              <div class="feed--item-Info">
+                <h2 class="feed--item-Info-Name">
+                  <a href="#">netflix-clone</a>
+                </h2>
+
+                <div class="added-info">
+                  <div class="language">
+                    <div class="language--color-Code"></div>
+                    <span class="language--name">Javascript</span>
+                  </div>
+                  <div class="stars">2</div>
+                  <div class="date">Updated on 2 Oct</div>
+                </div>
+              </div>
+              <div class="feed--item-Action">
+                <button>
+                  <i class="material-icons">star</i>
+                  Star
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="feed--list">
+            <div class="feed--item">
+              <div class="feed--item-Info">
+                <h2 class="feed--item-Info-Name">
+                  <a href="#">netflix-clone</a>
+                </h2>
+
+                <div class="added-info">
+                  <div class="language">
+                    <div class="language--color-Code"></div>
+                    <span class="language--name">Javascript</span>
+                  </div>
+                  <div class="stars">2</div>
+                  <div class="date">Updated on 2 Oct</div>
+                </div>
+              </div>
+              <div class="feed--item-Action">
+                <button>
+                  <i class="material-icons">star</i>
+                  Star
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="feed--list">
+            <div class="feed--item">
+              <div class="feed--item-Info">
+                <h2 class="feed--item-Info-Name">
+                  <a href="#">netflix-clone</a>
+                </h2>
+
+                <div class="added-info">
+                  <div class="language">
+                    <div class="language--color-Code"></div>
+                    <span class="language--name">Javascript</span>
+                  </div>
+                  <div class="stars">2</div>
+                  <div class="date">Updated on 2 Oct</div>
+                </div>
+              </div>
+              <div class="feed--item-Action">
+                <button>
+                  <i class="material-icons">star</i>
+                  Star
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="feed--list">
+            <div class="feed--item">
+              <div class="feed--item-Info">
+                <h2 class="feed--item-Info-Name">
+                  <a href="#">netflix-clone</a>
+                </h2>
+
+                <div class="added-info">
+                  <div class="language">
+                    <div class="language--color-Code"></div>
+                    <span class="language--name">Javascript</span>
+                  </div>
+                  <div class="stars">2</div>
+                  <div class="date">Updated on 2 Oct</div>
+                </div>
+              </div>
+              <div class="feed--item-Action">
+                <button>
+                  <i class="material-icons">star</i>
+                  Star
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
 </html>
