@@ -30,26 +30,31 @@ body {
 }
 
 /* Header ****************************** */
-.nav {
+.header {
   display: flex;
-  justify-content: space-between;
   padding: 1.6rem 2.4rem;
   background-color: var(--black);
   color: var(--white);
   font-size: 1.4rem;
 }
 
-.nav--siteNav {
-  display: flex;
+.header--toggle-checkbox,
+.header--toggle-label {
+  display: none;
 }
 
-.nav--logo {
+.nav {
+  display: flex;
+  flex: 1;
+}
+
+.header--logo {
   width: 3.2rem;
   height: 3.2rem;
   margin-right: 1.6rem;
 }
 
-.nav--logo img {
+.header--logo img {
   width: 100%;
   height: 100%;
 }
@@ -78,17 +83,17 @@ body {
   margin-right: 0.8rem;
 }
 
-.nav-links {
+.nav--links {
   display: flex;
   align-items: center;
 }
 
-.nav-links .nav-link {
+.nav--links .nav--link {
   margin-right: 1.6rem;
   font-weight: 600;
 }
 
-.nav-links .nav-link:hover {
+.nav--links .nav--link:hover {
   color: var(--nav-hover);
   cursor: pointer;
 }
@@ -131,6 +136,10 @@ body {
   top: 0;
   background-color: var(--white);
   z-index: 3;
+}
+
+.pageNav-md {
+  display: none;
 }
 
 .pageNav--links {
@@ -209,6 +218,10 @@ body {
   padding: 1.6rem 0;
 }
 
+.profile--info-md {
+  display: none;
+}
+
 .profile--info .profile--info-Name {
   font-size: 2.6rem;
   font-weight: 600;
@@ -218,16 +231,18 @@ body {
   font-size: 2rem;
   font-weight: 300;
   margin-bottom: 1.6rem;
+  color: var(--grey-2);
 }
 
 .profile--info .profile--info-Description {
   font-weight: 400;
+  color: var(--black);
 }
 
 /* Feed ********* */
 
 .feed {
-  flex: 0 0 75%;
+  flex: 0 0 65%;
   padding: 0 1.6rem;
 }
 
@@ -248,7 +263,7 @@ body {
 
 .feed--info {
   padding: 1.6rem 0;
-  width: 40%;
+  width: 100%;
   border-bottom: 1px solid var(--grey-4);
   font-size: 1.4rem;
   color: var(--black);
@@ -323,6 +338,8 @@ body {
   font-size: 12px;
   line-height: 20px;
   background-color: var(--button-background);
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px,
+    rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
   border: 1px solid var(--grey-4);
   border-radius: 6px;
   transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
@@ -337,4 +354,238 @@ body {
 
 .feed--item .feed--item-Action button i {
   font-size: 16px;
+}
+
+.show-sm {
+  display: none;
+}
+
+@media (max-width: 830px) {
+  .nav--links .lg-show {
+    display: none;
+  }
+}
+
+@media (max-width: 769px) {
+  .show-sm {
+    display: block;
+  }
+  .header {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header--toggle-label {
+    display: block;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .header--logo {
+    margin-right: 0;
+  }
+
+  .header--toggle-checkbox:checked ~ .nav {
+    display: block;
+    height: auto;
+  }
+  .nav {
+    position: absolute;
+    width: 100%;
+    padding: 1.6rem;
+    background: #24292e;
+    flex-direction: column;
+    left: 0;
+    top: 60px;
+    z-index: 15000;
+    height: 0;
+    overflow: hidden;
+    display: none;
+    transition: 0.3s ease-in all;
+  }
+
+  .nav--search-Label {
+    position: relative;
+    border: 1px solid var(--grey);
+    display: flex;
+    border-radius: 6px;
+    margin-right: 0;
+    margin-bottom: 1.6rem;
+  }
+
+  .nav--search-Label-Input {
+    border: none;
+    width: 100%;
+    background: none;
+    padding: 0.8rem 1.2rem;
+    color: var(--white);
+  }
+
+  .nav--search-Label-Input::placeholder {
+    color: var(--grey-3);
+  }
+
+  .nav--search-Label-Icon {
+    margin-right: 0.8rem;
+  }
+
+  .nav--links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav--links .nav--link {
+    display: flex;
+    border-top: 1px solid #ffffff26;
+    margin-right: 0;
+    padding: 0.8rem 0;
+    font-weight: 600;
+    width: 100%;
+  }
+
+  .nav--links .nav--link img {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.8rem;
+    border-radius: 50%;
+  }
+
+  .nav--actions-new-dropdown,
+  .nav--actions-profile-dropdown {
+    display: none;
+  }
+
+  .nav--actions-notifications {
+    margin-right: 0;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.6rem;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: row;
+    flex: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .profile--image {
+    width: 8.8rem;
+    height: 8.8rem;
+    position: static;
+    z-index: 0;
+    margin-right: 1.6rem;
+  }
+
+  .profile--image .emoji {
+    display: none;
+  }
+
+  .profile--info-md {
+    display: block;
+    margin-bottom: 2.4rem;
+  }
+
+  .profile--info-md .profile--info-md-emoji-description {
+    font-size: 1.2rem;
+    border: 1px solid var(--grey-4);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+  }
+
+  .profile--info-md .profile--info-md-Description {
+    margin-bottom: 1.6rem;
+  }
+
+  .profile--info .profile--info-Description {
+    display: none;
+  }
+
+  .profile--info-md .profile--info-md-button {
+    color: var(--black);
+    font-weight: 500;
+    padding: 5px 16px;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: var(--button-background);
+    border: 1px solid var(--grey-4);
+    border-radius: 6px;
+    width: 100%;
+    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px,
+      rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
+  }
+
+  .pageNav {
+    display: none;
+  }
+
+  .pageNav-md {
+    margin-top: 2.4rem;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--grey-4);
+    font-size: 1.4rem;
+    line-height: 30px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background-color: var(--white);
+    z-index: 3;
+  }
+
+  .pageNav--links-md {
+    display: flex;
+  }
+
+  .pageNav--link-md {
+    padding: 1rem 1.6rem;
+    display: flex;
+    /* transition: border-bottom 0.36s ease-in; */
+  }
+
+  .pageNav--link-md .pageNav--counter-md {
+    padding: 0 6px;
+    border-radius: 2rem;
+    display: inline-block;
+    /* line-height: 18px; */
+  }
+
+  .pageNav--link-md:hover {
+    cursor: pointer;
+  }
+
+  .pageNav--link-md:hover:not(.active) {
+    border-bottom: 2px solid var(--grey-4);
+  }
+
+  .active {
+    border-bottom: 2px solid var(--accent-1);
+  }
+
+  .pageNav--counter-md {
+    /* position: sticky; */
+    margin-left: 4px;
+    color: var(--grey-5);
+    padding: 2px 8px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: #d1d5da80;
+    border-radius: 2rem;
+  }
+
+  .feed {
+    flex: none;
+    padding: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .pageNav--links-md {
+    overflow: scroll;
+  }
 }

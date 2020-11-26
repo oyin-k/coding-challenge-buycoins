@@ -21,51 +21,64 @@
   </head>
 
   <body>
-    <header>
+    <header class="header">
+      <!-- <nav class="nav"> -->
+      <input
+        type="checkbox"
+        id="header--toggle-checkbox"
+        class="header--toggle-checkbox"
+      />
+      <label for="header--toggle-checkbox" class="header--toggle-label">
+        <div class="header--toggle-inner">
+          <i class="material-icons">add</i>
+        </div>
+      </label>
+      <div class="header--logo">
+        <img src="./github-main-logo.svg" alt="logo" />
+      </div>
       <nav class="nav">
-        <div class="nav--siteNav">
-          <div class="nav--logo">
-            <img src="./github-main-logo.svg" alt="logo" />
-          </div>
-          <label class="nav--search-Label">
-            <input
-              class="nav--search-Label-Input"
-              type="text"
-              placeholder="Search or jump to..."
-            />
-            <img
-              class="nav--search-Label-Icon"
-              src="./search-key-slash.svg"
-              alt=""
-            />
-          </label>
+        <label class="nav--search-Label">
+          <input
+            class="nav--search-Label-Input"
+            type="text"
+            placeholder="Search or jump to..."
+          />
+          <img
+            class="nav--search-Label-Icon"
+            src="./search-key-slash.svg"
+            alt=""
+          />
+        </label>
 
-          <ul class="nav-links">
-            <li class="nav-link">Pull requests</li>
-            <li class="nav-link">Issues</li>
-            <li class="nav-link">Marketplace</li>
-            <li class="nav-link">Explore</li>
-          </ul>
-        </div>
-
-        <div class="nav--actions">
-          <div class="nav--actions-notifications">
-            <i class="material-icons">notifications</i>
-          </div>
-          <div class="nav--actions-new-dropdown">
-            <i class="material-icons">add</i>
-            <i class="material-icons">arrow_drop_down</i>
-          </div>
-          <div class="nav--actions-profile-dropdown">
+        <ul class="nav--links">
+          <li class="nav--link">Pull <span class="lg-show">requests</span></li>
+          <li class="nav--link">Issues</li>
+          <li class="nav--link">Marketplace</li>
+          <li class="nav--link">Explore</li>
+          <li class="nav--link show-sm">
             <img src="./profile.jpeg" alt="profile-picture" />
-            <i class="material-icons">arrow_drop_down</i>
-          </div>
-        </div>
+            oyin-k
+          </li>
+        </ul>
       </nav>
+
+      <div class="nav--actions">
+        <div class="nav--actions-notifications">
+          <i class="material-icons">notifications</i>
+        </div>
+        <div class="nav--actions-new-dropdown">
+          <i class="material-icons">add</i>
+          <i class="material-icons">arrow_drop_down</i>
+        </div>
+        <div class="nav--actions-profile-dropdown">
+          <img src="./profile.jpeg" alt="profile-picture" />
+          <i class="material-icons">arrow_drop_down</i>
+        </div>
+      </div>
+      <!-- </nav> -->
     </header>
 
     <main>
-      <!-- <div style="margin-top: 24px"> -->
       <nav class="pageNav">
         <ul class="pageNav--links">
           <li class="pageNav--link">Overview</li>
@@ -76,7 +89,6 @@
           <li class="pageNav--link">Packages</li>
         </ul>
       </nav>
-      <!-- </div> -->
 
       <div class="main-content">
         <aside class="profile">
@@ -90,6 +102,24 @@
             <p class="profile--info-Description">love cooking on computers.</p>
           </div>
         </aside>
+        <div class="profile--info-md">
+          <div class="profile--info-md-emoji-description">
+            💭 Enjoying the possibilities of the web
+          </div>
+          <p class="profile--info-md-Description">love cooking on computers.</p>
+          <button class="profile--info-md-button">Edit Profile</button>
+        </div>
+
+        <nav class="pageNav-md">
+          <ul class="pageNav--links-md">
+            <li class="pageNav--link-md">Overview</li>
+            <li class="pageNav--link-md active">
+              Repositories <span class="pageNav--counter-md">60</span>
+            </li>
+            <li class="pageNav--link-md">Projects</li>
+            <li class="pageNav--link-md">Packages</li>
+          </ul>
+        </nav>
 
         <section class="feed">
           <div class="feed--filter">
