@@ -7,6 +7,10 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/feather-icons@4.28.0/dist/feather-sprite.svg"
+    />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
@@ -16,13 +20,12 @@
     <title>Your Repositories</title>
 
     <link rel="shortcut icon" type="image/png" href="”favicon.png”" />
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
     <header class="header">
-      <!-- <nav class="nav"> -->
       <input
         type="checkbox"
         id="header--toggle-checkbox"
@@ -30,11 +33,11 @@
       />
       <label for="header--toggle-checkbox" class="header--toggle-label">
         <div class="header--toggle-inner">
-          <i class="material-icons">add</i>
+          <img class="icon" src="./icons/menu.svg" alt="plus" />
         </div>
       </label>
       <div class="header--logo">
-        <img src="./github-main-logo.svg" alt="logo" />
+        <img src="./icons/github-main-logo.svg" alt="logo" />
       </div>
       <nav class="nav">
         <label class="nav--search-Label">
@@ -64,10 +67,11 @@
 
       <div class="nav--actions">
         <div class="nav--actions-notifications">
-          <i class="material-icons">notifications</i>
+          <img class="icon" src="./icons/bell.svg" alt="notifications" />
+          <div class="notifications-badge"></div>
         </div>
         <div class="nav--actions-new-dropdown">
-          <i class="material-icons">add</i>
+          <img class="icon" src="./icons/plus.svg" alt="plus" />
           <i class="material-icons">arrow_drop_down</i>
         </div>
         <div class="nav--actions-profile-dropdown">
@@ -75,18 +79,28 @@
           <i class="material-icons">arrow_drop_down</i>
         </div>
       </div>
-      <!-- </nav> -->
     </header>
 
     <main>
       <nav class="pageNav">
         <ul class="pageNav--links">
-          <li class="pageNav--link">Overview</li>
-          <li class="pageNav--link active">
-            Repositories <span class="pageNav--counter">60</span>
+          <li class="pageNav--link">
+            <img class="icon" src="./icons/book-open.svg" alt="overview icon" />
+            Overview
           </li>
-          <li class="pageNav--link">Projects</li>
-          <li class="pageNav--link">Packages</li>
+          <li class="pageNav--link active">
+            <img class="icon" src="./icons/book.svg" alt="repos icon" />
+            Repositories
+            <div class="pageNav--counter">60</div>
+          </li>
+          <li class="pageNav--link">
+            <img class="icon" src="./icons/trello.svg" alt="projects icon" />
+            Projects
+          </li>
+          <li class="pageNav--link">
+            <img class="icon" src="./icons/box.svg" alt="packages icon" />
+            Packages
+          </li>
         </ul>
       </nav>
 
@@ -149,7 +163,7 @@
               </div>
               <div class="feed--item-Action">
                 <button>
-                  <i class="material-icons">star</i>
+                  <img class="icon" src="./icons/star.svg" alt="star" />
                   Star
                 </button>
               </div>
@@ -173,7 +187,7 @@
               </div>
               <div class="feed--item-Action">
                 <button>
-                  <i class="material-icons">star</i>
+                  <img class="icon" src="./icons/star.svg" alt="star" />
                   Star
                 </button>
               </div>
@@ -197,7 +211,7 @@
               </div>
               <div class="feed--item-Action">
                 <button>
-                  <i class="material-icons">star</i>
+                  <img class="icon" src="./icons/star.svg" alt="star" />
                   Star
                 </button>
               </div>
