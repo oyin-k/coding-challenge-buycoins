@@ -321,12 +321,13 @@ body {
 
 .feed--list {
   padding: 2.4rem 0;
-  border-bottom: 1px solid var(--grey-4);
 }
 
 .feed--item {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid var(--grey-4);
+  padding: 2.4rem 0;
 }
 
 .feed--item-Info .feed--item-Info-Name {
@@ -342,6 +343,12 @@ body {
 
 .feed--item-Info .feed--item-Info-Name a:hover {
   text-decoration: underline;
+}
+
+.feed--item-Info .feed--item-Description {
+  font-size: 1.4rem;
+  margin: 0.8rem 0 1.6rem;
+  color: var(--grey-2);
 }
 
 .feed--item-Info .added-info {
