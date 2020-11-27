@@ -187,6 +187,7 @@ body {
   padding: 1rem 1.6rem;
   display: flex;
   align-items: center;
+  border-bottom: 2px solid transparent;
   /* transition: border-bottom 0.36s ease-in; */
 }
 
@@ -199,7 +200,7 @@ body {
 }
 
 .pageNav--link:hover:not(.active) {
-  border-bottom: 2px solid var(--grey-4);
+  border-bottom-color: var(--grey-4);
 }
 
 .active {
@@ -361,6 +362,15 @@ body {
 .feed--item-Info .added-info .language,
 .feed--item-Info .added-info .stars {
   margin-right: 1.6rem;
+}
+
+.feed--item-Info .added-info .stars {
+  display: flex;
+  align-items: center;
+}
+
+.feed--item-Info .added-info .stars img {
+  margin-right: 0.4rem;
 }
 
 .feed--item-Info .added-info .language {

@@ -11,104 +11,111 @@ const repoCountSmallScreen = document.getElementById("pageNav--counter-md");
 const repoCountPageNav = document.getElementById("pageNav--counter");
 const repoList = document.getElementById("feed--list");
 
-const userLogin = "oyin-k";
+const userName = "oyin-k";
 
-getHeaderAvatar();
-getProfileInfo();
-getRepoCount();
-getRepos();
+getUserData(userName).then((data) => {
+  const userData = data.data.user;
 
-async function getHeaderAvatar() {
-  const resp = await getUserData(userLogin);
+  getHeaderAvatar(userData);
+  getProfileInfo(userData);
+  getRepoCount(userData);
+  getRepos(userData);
+});
 
+function getHeaderAvatar(user) {
   profileDropdown.innerHTML = `
-    <img src="${resp.avatarUrl}" alt="profile-picture" />
-    <i class="material-icons">arrow_drop_down</i>
-  `;
+      <img src="${user.avatarUrl}" alt="profile-picture" />
+      <i class="material-icons">arrow_drop_down</i>
+    `;
 
   profileInfoNavSmallScreen.innerHTML = `
-    <img src="${resp.avatarUrl}" alt="profile-picture" />
-    ${resp.login}
-  `;
+      <img src="${user.avatarUrl}" alt="profile-picture" />
+      ${user.login}
+    `;
 }
 
-async function getProfileInfo() {
-  const resp = await getUserData(userLogin);
-
+function getProfileInfo(user) {
   const profileHTML = `
-    <div class="profile--image">
-        <img src="${resp.avatarUrl}" alt="profile image" />
-        <div class="emoji">💭</div>
-    </div>
-    <div class="profile--info">
-        <h1 class="profile--info-Name">${resp.name}</h1>
-        <h4 class="profile--info-Username">${resp.login}</h4>
-        <p class="profile--info-Description">${resp.bio}</p>
-    </div>
-  `;
+      <div class="profile--image">
+          <img src="${user.avatarUrl}" alt="profile image" />
+          <div class="emoji">💭</div>
+      </div>
+      <div class="profile--info">
+          <h1 class="profile--info-Name">${user.name}</h1>
+          <h4 class="profile--info-Username">${user.login}</h4>
+          <p class="profile--info-Description">${user.bio}</p>
+      </div>
+    `;
 
   const profileSmallScreenHTML = `
-    <div class="profile--info-md-emoji-description">
-    💭 ${resp.status.message}
-    </div>
-    <p class="profile--info-md-Description">love cooking on computers.</p>
-    <button class="profile--info-md-button">Edit Profile</button>
-  `;
+      <div class="profile--info-md-emoji-description">
+      💭 ${user.status.message}
+      </div>
+      <p class="profile--info-md-Description">love cooking on computers.</p>
+      <button class="profile--info-md-button">Edit Profile</button>
+    `;
 
   profile.innerHTML = profileHTML;
   profileSmallScreen.innerHTML = profileSmallScreenHTML;
 }
 
-async function getRepoCount() {
-  const resp = await getUserData(userLogin);
-
-  repoCountPageNav.innerText = resp.repositories.totalCount;
-  repoCountSmallScreen.innerText = resp.repositories.totalCount;
+function getRepoCount(user) {
+  repoCountPageNav.innerText = user.repositories.totalCount;
+  repoCountSmallScreen.innerText = user.repositories.totalCount;
 
   repoCount.innerHTML = `
-        <p>
-            <strong>${resp.repositories.totalCount}</strong> repositories for
-            <strong>public</strong> repositories
-        </p>
-    `;
+          <p>
+              <strong>${user.repositories.totalCount}</strong> repositories for
+              <strong>public</strong> repositories
+          </p>
+      `;
 }
 
-async function getRepos() {
-  const resp = await getUserData(userLogin);
-  const repos = resp.repositories.nodes;
+function getRepos(user) {
+  const repos = user.repositories.nodes;
 
   let repoHTML = repos
     .map((repo) => {
       return `
-        <div class="feed--item">
-            <div class="feed--item-Info">
-                <h2 class="feed--item-Info-Name">
-                    <a href="#">${repo.name}</a>
-                </h2>
-                <p class="feed--item-Description">
-                    ${repo.description ? repo.description : ""}
-                </p>
-                <div class="added-info">
-                    <div class="language">
-                    <div class="language--color-Code" style="background-color:${
-                      repo.primaryLanguage.color
-                    }"></div>
-                    <span class="language--name">${
-                      repo.primaryLanguage.name
-                    }</span>
-                    </div>
-                    <div class="stars">2</div>
-                    <div class="date">${repo.updatedAt}</div>
-                </div>
-            </div>
-            <div class="feed--item-Action">
-                <button>
-                    <img class="icon" src="./icons/star.svg" alt="star" />
-                    Star
-                </button>
-            </div>
-        </div>
-    `;
+          <div class="feed--item">
+              <div class="feed--item-Info">
+                  <h2 class="feed--item-Info-Name">
+                      <a href="#">${repo.name}</a>
+                  </h2>
+                  <p class="feed--item-Description">
+                      ${repo.description ? repo.description : ""}
+                  </p>
+                  <div class="added-info">
+                      <div class="language">
+                      <div class="language--color-Code" style="background-color:${
+                        repo.primaryLanguage.color
+                      }"></div>
+                      <span class="language--name">${
+                        repo.primaryLanguage.name
+                      }</span>
+                      </div>
+                      
+                      ${
+                        repo.stargazerCount > 0
+                          ? `<div class="stars">
+                                <img class="icon" src="./icons/star.svg" alt="star" />
+                                ${repo.stargazerCount}
+                            </div>`
+                          : ""
+                      }
+                      <div class="date"> Updated on ${moment(
+                        repo.updatedAt
+                      ).format("Do MMMM")}</div>
+                  </div>
+              </div>
+              <div class="feed--item-Action">
+                  <button>
+                      <img class="icon" src="./icons/star.svg" alt="star" />
+                      Star
+                  </button>
+              </div>
+          </div>
+      `;
     })
     .join("");
 
@@ -118,39 +125,38 @@ async function getRepos() {
 function getUserData(user) {
   return queryFetch(
     `
-          query getUser($login: String!){
-              user(login: $login) {
-                repositories(orderBy: {field: CREATED_AT, direction: DESC}, privacy: PUBLIC, first: 20) {
-                  nodes {
-                    name
-                    primaryLanguage {
-                      color
+            query getUser($login: String!){
+                user(login: $login) {
+                  repositories(orderBy: {field: CREATED_AT, direction: DESC}, privacy: PUBLIC, first: 20) {
+                    nodes {
                       name
+                      primaryLanguage {
+                        color
+                        name
+                      }
+                      description
+                      id
+                      updatedAt
+                      stargazerCount
                     }
-                    description
-                    id
-                    updatedAt
+                    totalCount
                   }
-                  totalCount
+                  avatarUrl(size: 400)
+                  bio
+                  name
+                  login
+                  status {
+                    emoji
+                    message
+                  }
                 }
-                avatarUrl(size: 400)
-                bio
-                name
-                login
-                status {
-                  emoji
-                  message
-                }
-              }
-            }`,
+              }`,
     { login: user }
-  ).then((data) => {
-    return data.data.user;
-  });
+  );
 }
 
-function queryFetch(query, variables) {
-  return fetch("https://api.github.com/graphql", {
+async function queryFetch(query, variables) {
+  const response = await fetch("https://api.github.com/graphql", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -160,5 +166,7 @@ function queryFetch(query, variables) {
       query: query,
       variables: variables,
     }),
-  }).then((res) => res.json());
+  });
+
+  return await response.json();
 }
