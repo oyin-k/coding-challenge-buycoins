@@ -109,10 +109,19 @@ function getRepos(user) {
                   </div>
               </div>
               <div class="feed--item-Action">
-                  <button>
-                      <img class="icon" src="./icons/star.svg" alt="star" />
-                      Star
-                  </button>
+              ${
+                repo.stargazerCount > 0
+                  ? `<button>
+                        <img class="icon" src="./icons/star-fill.svg" alt="star" />
+                        Unstar
+                    </button>
+                    `
+                  : `<button>
+                        <img class="icon" src="./icons/star.svg" alt="star" />
+                        Star
+                    </button>`
+              }
+                  
               </div>
           </div>
       `;
