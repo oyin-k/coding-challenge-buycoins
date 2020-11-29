@@ -169,7 +169,7 @@ async function queryFetch(query, variables) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer d084b9b9ebc810141a8ab73f5f22e378b70fcd5e`,
+      Authorization: `Bearer 910b20a40a660299b8f1a83021403dc4d713bef4   `,
     },
     body: JSON.stringify({
       query: query,
