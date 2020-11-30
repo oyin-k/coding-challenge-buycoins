@@ -5,9 +5,9 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const dotenv = require("dotenv");
-
-dotenv.config({ path: "./.env" });
+const dotenv = require("dotenv").config({
+  path: path.join(__dirname, ".env"),
+});
 
 module.exports = {
   entry: "./src/js/app.js",
