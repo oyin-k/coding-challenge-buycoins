@@ -1,3 +1,7 @@
+import moment from "moment";
+
+const token = process.env.ACCESS_TOKEN;
+
 const profileDropdown = document.getElementById(
   "nav--actions-profile-dropdown"
 );
@@ -98,7 +102,7 @@ function getRepos(user) {
                       ${
                         repo.stargazerCount > 0
                           ? `<div class="stars">
-                                <img class="icon" src="./icons/star.svg" alt="star" />
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#6a737d" stroke="#959da5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                                 ${repo.stargazerCount}
                             </div>`
                           : ""
@@ -112,12 +116,12 @@ function getRepos(user) {
               ${
                 repo.stargazerCount > 0
                   ? `<button>
-                        <img class="icon" src="./icons/star-fill.svg" alt="star" />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#6a737d" stroke="#959da5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                         Unstar
                     </button>
                     `
                   : `<button>
-                        <img class="icon" src="./icons/star.svg" alt="star" />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#959da5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                         Star
                     </button>`
               }
@@ -169,7 +173,7 @@ async function queryFetch(query, variables) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer 910b20a40a660299b8f1a83021403dc4d713bef4   `,
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
       query: query,

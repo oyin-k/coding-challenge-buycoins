@@ -369,8 +369,11 @@ body {
   align-items: center;
 }
 
-.feed--item-Info .added-info .stars img {
+.feed--item-Info .added-info .stars img,
+.feed--item-Info .added-info .stars svg {
   margin-right: 0.4rem;
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
 .feed--item-Info .added-info .language {
@@ -415,8 +418,11 @@ body {
   transition-duration: 0.1s;
 }
 
-.feed--item .feed--item-Action button img {
+.feed--item .feed--item-Action button img,
+.feed--item .feed--item-Action button svg {
   margin-right: 0.4rem;
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
 .show-sm {
