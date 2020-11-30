@@ -1,6 +1,7 @@
 import moment from "moment";
 
 const token = process.env.ACCESS_TOKEN;
+console.log(token);
 
 const profileDropdown = document.getElementById(
   "nav--actions-profile-dropdown"
