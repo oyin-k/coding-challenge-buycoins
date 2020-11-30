@@ -11,7 +11,7 @@ dotenv.config({ path: "./.env" });
 
 module.exports = {
   entry: "./src/js/app.js",
-  mode: "production",
+  mode: "development",
   output: {
     filename: "main.[contenthash].js",
     path: path.resolve(__dirname, "dist"),
