@@ -429,10 +429,11 @@ body {
   display: none;
 }
 
+/* Media queries ********* */
+
 @media (max-width: 945px) {
   .feed {
     flex: 0 0 70%;
-    /* padding: 0; */
   }
 }
 

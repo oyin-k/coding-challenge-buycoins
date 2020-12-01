@@ -1,7 +1,6 @@
 import moment from "moment";
 
 const token = process.env.ACCESS_TOKEN;
-console.log(token);
 
 const profileDropdown = document.getElementById(
   "nav--actions-profile-dropdown"
@@ -53,11 +52,11 @@ function getProfileInfo(user) {
     `;
 
   const profileSmallScreenHTML = `
-      <div class="profile--info-md-emoji-description">
-      💭 ${user.status.message}
-      </div>
-      <p class="profile--info-md-Description">love cooking on computers.</p>
-      <button class="profile--info-md-button">Edit Profile</button>
+        <div class="profile--info-md-emoji-description">
+          💭 ${user.status.message}
+        </div>
+        <p class="profile--info-md-Description">love cooking on computers.</p>
+        <button class="profile--info-md-button">Edit Profile</button>
     `;
 
   profile.innerHTML = profileHTML;
